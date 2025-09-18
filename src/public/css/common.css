@@ -1,17 +1,26 @@
+.main {
+    background: #F8F8F8;
+}
+
 .header {
-    background: #000;
+    background: #FFFFFF;
 }
 
 .header__inner {
     margin: 0 auto;
-    padding: 20px 15px;
+    padding: 0 15px;
     max-width: 1512px;
     height: 53px;
+    border-bottom: 1px solid #F4F4F4;
 }
 
 .header__logo {
-    color: #fff;
+    display: inline-block;
+    line-height: 53px;
+    color: #F5C800;
     text-decoration: none;
     font-weight: bold;
     font-size: 24px;
 }
+
+

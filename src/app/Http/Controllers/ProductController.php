@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
-use App\Http\Requests\RegisterRequest;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Season;
@@ -54,6 +53,7 @@ class ProductController extends Controller
     }
 
 
+
     public function destroy($productId)
     {
         $product = Product::findOrFail($productId);
@@ -100,7 +100,7 @@ class ProductController extends Controller
 
 
 
-    public function register(RegisterRequest $request)
+    public function register(ProductRequest $request)
     {
         $path = null;
         if ($request->hasFile('image')) {

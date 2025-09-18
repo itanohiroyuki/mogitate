@@ -1,0 +1,148 @@
+.product__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.product__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.product__title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.product__button-register {
+    display: inline-block;
+    padding: 8px 14px;
+    font-size: 14px;
+    background: #FFA929;
+    color: #333333;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.product__button-register:hover {
+    background: #e28400;
+}
+
+.product__main {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.search-form {
+    flex: 0 0 250px;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-form__item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.search-form__item-input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 200px;
+}
+
+.search-form__button {
+    margin-top: 10px;
+}
+
+.search-form__button-submit {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #f5c800;
+    color: #333333;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.search-form__button-submit:hover {
+    background: #d4aa00;
+}
+
+.search-form__item-select {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 200px;
+}
+.product__item {
+    flex: 1;
+}
+
+.product__item-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    text-align: center;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.product-card__title {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 12px;
+    margin: 8px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.product-card__img .product-card__title,
+.product-card__img .product-card__title span {
+    text-decoration: none;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.pagination svg {
+    width: 24px;
+    height: 24px;
+}
+
+.pagination .flex {
+    gap: 6px;
+}

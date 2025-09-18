@@ -7,7 +7,7 @@
 @section('content')
     <div class="register-form__content">
         <div class="register-form__heading">
-            <h2>商品登録</h2>
+            <h2 class="register-form__heading-title">商品登録</h2>
         </div>
         <form class="register-form" action="/products/register" method="post" enctype="multipart/form-data">
             @csrf
@@ -52,13 +52,11 @@
                     </label>
                 </div>
                 @php
-                    // $product が null の場合はサンプル画像、登録済みなら画像を表示
                     $preview =
                         isset($product) && $product->image
                             ? asset('storage/' . $product->image)
                             : asset('storage/images/sample.png');
                 @endphp
-
                 <div style="margin-top:10px;">
                     <img src="{{ $preview }}" style="max-width:200px;">
                 </div>
@@ -73,6 +71,7 @@
                 <div class="register-form__title">
                     <label class="register-form__label">
                         季節<span class="require">必須</span>
+                        <span class="span_2">複数選択可</span>
                     </label>
                 </div>
                 <div class="register-form__input">
@@ -102,13 +101,13 @@
                         {{ $message }}
                     @enderror
                 </div>
-
-                <div class="form__button">
-                    <a href="{{ route('products.index') }}">戻る</a>
-                    <button class="form__button-submit" type="submit">
-                        登録
-                    </button>
-                </div>
+            </div>
+            <div class="form__button">
+                <a class="form__button-return" href="{{ route('products.index') }}">戻る</a>
+                <button class="form__button-register" type="submit">
+                    登録
+                </button>
+            </div>
         </form>
     </div>
 @endsection

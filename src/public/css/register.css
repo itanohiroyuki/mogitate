@@ -1,0 +1,111 @@
+.register-form__content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #F8F8F8;
+    border-radius: 10px;
+}
+
+.register-form__heading-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.register-form__group {
+    margin-bottom: 25px;
+}
+
+.register-form__label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #4B4B4B;
+}
+
+.require {
+    background-color: #e60033;
+    color: #FFFFFF;
+    font-weight: 300;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.span_2 {
+    font-weight: 300;
+    font-size: 12px;
+    color: #FD0707;
+    margin-left: 8px;
+}
+
+.register-form__input input[type="text"],
+.register-form__input input[type="file"],
+.register-form__textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.register-form__textarea {
+    height: 160px;
+    resize: vertical;
+}
+
+.form__error {
+    margin-top: 5px;
+    font-size: 13px;
+    color: #e60033;
+}
+
+.register-form__input label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 16px;
+    font-size: 14px;
+    color: #444;
+    cursor: pointer;
+}
+
+
+
+.form__button {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+}
+
+.form__button-return {
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background: #E0DFDE;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    padding: 10px 70px;
+}
+
+.form__button-return:hover {
+    background: #d4d2d1;
+}
+
+.form__button-register {
+    border: none;
+    border-radius: 6px;
+    background: #f5c800;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 10px 70px;
+}
+
+.form__button-register:hover {
+    background: #d4aa00;
+}
+
