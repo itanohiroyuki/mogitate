@@ -10,10 +10,17 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::with('seasons')
-            ->paginate(6);
+        $query = Product::with('seasons');
+
+        if ($request->sort === 'high') {
+            $query->orderBy('price', 'desc');
+        } elseif ($request->sort === 'low') {
+            $query->orderBy('price', 'asc');
+        }
+
+        $products = $query->paginate(6)->appends($request->query());
         $seasons = Season::all();
 
         return view('product', compact('products', 'seasons'));
@@ -72,11 +79,19 @@ class ProductController extends Controller
 
     public function search(Request $request)
     {
-        $products = Product::with('seasons')
-            ->KeywordSearch($request->keyword)
-            ->Paginate(6)
-            ->appends($request->all());
+        $query = Product::with('seasons');
 
+        if ($request->keyword) {
+            $query->where('name', 'like', '%' . $request->keyword . '%');
+        }
+
+        if ($request->sort === 'high') {
+            $query->orderBy('price', 'desc');
+        } elseif ($request->sort === 'low') {
+            $query->orderBy('price', 'asc');
+        }
+
+        $products = $query->paginate(6)->appends($request->query());
         $seasons = Season::all();
 
         return view('product', compact('products', 'seasons'));

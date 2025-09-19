@@ -14,7 +14,7 @@
     <div class="product__content">
         <div class="product__heading">
             <h2 class="product__title">商品一覧</h2>
-            <a class="product__button-register" href="products/register">+商品を追加</a>
+            <a class="product__button-register" href="{{ url('products/register') }}">+商品を追加</a>
         </div>
         <div class="product__main">
             <form class="search-form" action="/products/search" method="get">
@@ -27,7 +27,11 @@
                 </div>
                 <div class="search-form__item">
                     <h3>価格順で表示</h3>
-                    <select class="search-form__item-select" name="" id=""></select>
+                    <select name="sort" onchange="this.form.submit()">
+                        <option value="">並び替え</option>
+                        <option value="high" {{ request('sort') == 'high' ? 'selected' : '' }}>高い順</option>
+                        <option value="low" {{ request('sort') == 'low' ? 'selected' : '' }}>低い順</option>
+                    </select>
                 </div>
             </form>
             <div class="product__item">
@@ -45,7 +49,7 @@
                     @endforeach
                 </div>
                 <div class="pagination">
-                    {{ $products->links() }}
+                    {{ $products->appends(request()->query())->links() }}
                 </div>
             </div>
         </div>
