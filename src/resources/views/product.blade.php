@@ -26,12 +26,25 @@
                     </div>
                 </div>
                 <div class="search-form__item">
-                    <h3>価格順で表示</h3>
-                    <select name="sort" onchange="this.form.submit()">
+                    <h3 class="search-form__title">価格順で表示</h3>
+                    <select class="search-form__item-select" name="sort" onchange="this.form.submit()">
                         <option value="">並び替え</option>
-                        <option value="high" {{ request('sort') == 'high' ? 'selected' : '' }}>高い順</option>
-                        <option value="low" {{ request('sort') == 'low' ? 'selected' : '' }}>低い順</option>
+                        <option value="high" {{ request('sort') == 'high' ? 'selected' : '' }}>高い順に表示</option>
+                        <option value="low" {{ request('sort') == 'low' ? 'selected' : '' }}>低い順に表示</option>
                     </select>
+                    <div class="active-filters">
+                        @if (request('sort') === 'high')
+                            <span class="filter-tag">
+                                高い順に表示
+                                <a href="{{ request()->fullUrlWithQuery(['sort' => null]) }}" class="filter-remove">✕</a>
+                            </span>
+                        @elseif(request('sort') === 'low')
+                            <span class="filter-tag">
+                                低い順に表示
+                                <a href="{{ request()->fullUrlWithQuery(['sort' => null]) }}" class="filter-remove">✕</a>
+                            </span>
+                        @endif
+                    </div>
                 </div>
             </form>
             <div class="product__item">

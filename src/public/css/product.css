@@ -86,6 +86,41 @@
     font-size: 14px;
     width: 200px;
 }
+
+.active-filters {
+    margin: 10px 0;
+}
+
+.filter-tag {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #F5C800;
+    border-radius: 20px;
+    padding: 4px 10px;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.filter-remove {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #f5c800;
+    border-radius: 50%;
+    color: #f5c800;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.filter-remove:hover {
+    background: #f5c800;
+    color: #fff;
+}
+
 .product__item {
     flex: 1;
 }
